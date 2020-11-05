@@ -9,6 +9,7 @@ import pandas as pd
 
 
 app = dash.Dash()
+server = app.server
 app.layout = html.Div(children=[
     html.A("download excel", href="/download_excel/"),
 ])
