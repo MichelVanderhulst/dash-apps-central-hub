@@ -8,8 +8,9 @@ import flask
 import pandas as pd
 
 
-app = dash.Dash()
-server = app.server
+
+server = flask.Flask(__name__)
+app = dash.Dash(__name__, server=server)
 app.layout = html.Div(children=[
     html.A("download excel", href="/download_excel/"),
 ])
