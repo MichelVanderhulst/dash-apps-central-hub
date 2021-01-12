@@ -1,38 +1,42 @@
 import dash
-from dash.dependencies import Input, Output, State
 import dash_core_components as dcc
 import dash_html_components as html
-from flask import send_file
-import io
-import flask
+from dash.dependencies import Input, Output, State
+import dash_bootstrap_components as dbc
+
+from layout_header import header
+from layout_body import body
+
+
 import pandas as pd
+import urllib.parse
+
+app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
+server = app.server
+
+
+app.layout = html.Div(
+                id='main_page',
+                children=[
+                    header(),
+                    body(),
+                         ],
+                     )
+
+
+@app.callback(
+    Output("popover", "is_open"),
+    [Input("popover-target", "n_clicks")],
+    [State("popover", "is_open")],
+)
+def toggle_popover(n, is_open):
+    if n:
+        return not is_open
+    return is_open
 
 
 
-server = flask.Flask(__name__)
-app = dash.Dash(__name__, server=server)
-app.layout = html.Div(children=[
-    html.A("download excel", href="/download_excel/"),
-])
-
-
-@app.server.route('/download_excel/')
-def download_excel():
-    #Create DF
-    d = {'col1': [1, 2], 'col2': [3, 4]}
-    df = pd.DataFrame(data=d)
-
-    #Convert DF
-    strIO = io.BytesIO()
-    excel_writer = pd.ExcelWriter(strIO, engine="xlsxwriter")
-    df.to_excel(excel_writer, sheet_name="sheet1")
-    excel_writer.save()
-    #excel_data = strIO.getvalue()
-    strIO.seek(0)
-
-    return send_file(strIO,
-                     attachment_filename='test.xlsx',
-                     as_attachment=True)
 
 if __name__ == '__main__':
     app.run_server(debug=True)
+
