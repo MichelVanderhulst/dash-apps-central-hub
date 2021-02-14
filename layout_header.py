@@ -60,7 +60,7 @@ def header():
                                                                        is_open=False,
                                                                        target="popover-target"),
                                                           ],
-                                                 style={"display":"inline-block","font-family":"sans-serif","marginLeft":"47%"}),
+                                                 style={"display":"inline-block","font-family":"sans-serif","marginLeft":"44%"}),
 
                                      html.A(id="nova-logo",
                                              children=[html.Img(style={"height":"11%","width":"11%"}, src="data:image/png;base64,{}".format(base64.b64encode(open("1280px-NovaSBE_Logo.svg.png","rb").read()).decode()))],
