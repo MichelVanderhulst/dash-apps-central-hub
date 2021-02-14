@@ -13,7 +13,7 @@ URLs=[html.A(html.P("eu-option-bsm.herokuapp.com"),href="https://eu-option-bsm.h
       html.A(html.P("asian-option-crr.herokuapp.com"),href='https://asian-option-crr.herokuapp.com'), 
       html.A(html.P("exchange-option-bsm.herokuapp.com"),href='http://exchange-option-bsm.herokuapp.com')]
 authors=["Michel Vanderhulst","Michel Vanderhulst","Michel Vanderhulst","Michel Vanderhulst"]
-lastupdated = ["2020/10/28","2020/11/06","2020/06/20","2021/01/10"]
+lastupdated = ["2021/01/04","2021/02/11","2021/02/11","2021/02/14"]
 
 dictionary={"Derivative":derivatives,"Model":models,"URL":URLs,"Author":authors,"Last updated":lastupdated}
 df=pd.DataFrame(dictionary)
