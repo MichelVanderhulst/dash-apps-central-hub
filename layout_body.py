@@ -8,14 +8,14 @@ import dash_table
 
 derivatives = ["European option", "European option","Asian option","Exchange option"]
 models=["Black-Scholes-Merton","Cox-Ross Rubinstein","Cox-Ross Rubinstein" , "Black-Scholes-Merton"]
-URLs=[html.A(html.P("eu-option-bsm.herokuapp.com"),href="https://eu-option-bsm.herokuapp.com"), 
-      html.A(html.P('eu-option-crr.herokuapp.com'),href="https://eu-option-crr.herokuapp.com"), 
-      html.A(html.P("asian-option-crr.herokuapp.com"),href='https://asian-option-crr.herokuapp.com'), 
-      html.A(html.P("exchange-option-bsm.herokuapp.com"),href='http://exchange-option-bsm.herokuapp.com')]
+URLs=[html.A(html.P("eu-option-bsm.herokuapp.com"),href="https://eu-option-bsm.herokuapp.com", target="_blank"), 
+      html.A(html.P('eu-option-crr.herokuapp.com'),href="https://eu-option-crr.herokuapp.com", target="_blank"), 
+      html.A(html.P("asian-option-crr.herokuapp.com"),href='https://asian-option-crr.herokuapp.com', target="_blank"), 
+      html.A(html.P("exchange-option-bsm.herokuapp.com"),href='http://exchange-option-bsm.herokuapp.com', target="_blank")]
 authors=["Michel Vanderhulst","Michel Vanderhulst","Michel Vanderhulst","Michel Vanderhulst"]
 lastupdated = ["2021/01/04","2021/02/11","2021/02/11","2021/02/14"]
 
-dictionary={"Derivative":derivatives,"Model":models,"URL":URLs,"Author":authors,"Last updated":lastupdated}
+dictionary={"Derivative":derivatives,"Model":models,"URL":URLs,"Author":authors}
 df=pd.DataFrame(dictionary)
 table=dbc.Table.from_dataframe(df, striped=True, bordered=True, hover=True)
 
@@ -33,9 +33,14 @@ def body():
                                 html.H4('What is this app?', style={"text-align":"center"}),
                                 html.P(
                                     """
-                                    This app lists financial derivatives replication strategies web applications. Their goal is to illusstrate through visuals the investment strategies that replicates the derivatives prices, i.e. proving they are arbitrage-free.
+                                    This app lists financial derivatives replication strategies web applications. Their goal is to illustrate through visuals the investment strategies that replicates the derivatives prices, i.e. proving they are arbitrage-free.
                                     """
                                       ),
+                                html.Br(),
+                                html.P(
+                                  """
+                                  Note: the apps are turned off by default. Upon startup, it can take between 10 to 30 seconds to load. It will then run at full speed.
+                                  """),
                                 html.Br(),
                                 html.Div(table)])
                                  ),
@@ -44,7 +49,7 @@ def body():
                           value="Origin",
                           children=[html.Div(children=[
                             html.Br(),
-                            html.H4("Origin of web applications and methodology", style={"text-align":"center"}),
+                            html.H4("Origin of apps and methodology", style={"text-align":"center"}),
                             html.P([
                               """
                               The web applications were done by Michel Vanderhulst in 2020/2021 for his Master's Thesis under the supervision of Prof. Frédéric Vrins at the Louvain School of Management.
@@ -55,11 +60,13 @@ def body():
                               """
                               The first four web apps have as support the written thesis of Michel. The full mathematical proofs and explanations, along the applications' developments (and step-by-step methodology to build one) can be found there. 
                               """]),
+                            html.Br(),
+                            html.P(["The source code of the apps can be found at ", html.A("github.com/MichelVanderhulst",href="https://github.com/MichelVanderhulst?tab=repositories", target="_blank"),"."])
                             ])]),
                       #
                       #
                   
-    ],),], style={'float': 'left', 'width': '97%', 'margin':"20px"}),
+    ],),], style={"display":"flex", 'margin':"20px", 'transform':'translateX(+30%)', "width":"60%"}), 
   ])
 
 

@@ -1,5 +1,4 @@
-# Web application to price & hedge European options
-
+# Web application to centralize all similar apps
 Python-based app that centralizes all the replication strategy apps done
 
 ## Visit the web app

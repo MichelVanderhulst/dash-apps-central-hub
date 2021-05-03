@@ -6,10 +6,8 @@ import dash_bootstrap_components as dbc
 
 from layout_header import header
 from layout_body import body
-
-
 import pandas as pd
-import urllib.parse
+
 
 app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
 server = app.server
