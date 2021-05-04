@@ -1,24 +1,47 @@
+# Dash app libraries
 import dash
 import dash_core_components as dcc
 import dash_html_components as html
 import dash_bootstrap_components as dbc
 import base64
-import pandas as pd
 import dash_table
 
-derivatives = ["European option", "European option","Asian option","Exchange option"]
-models=["Black-Scholes-Merton","Cox-Ross Rubinstein","Cox-Ross Rubinstein" , "Black-Scholes-Merton"]
-URLs=[html.A(html.P("eu-option-bsm.herokuapp.com"),href="https://eu-option-bsm.herokuapp.com", target="_blank"), 
-      html.A(html.P('eu-option-crr.herokuapp.com'),href="https://eu-option-crr.herokuapp.com", target="_blank"), 
-      html.A(html.P("asian-option-crr.herokuapp.com"),href='https://asian-option-crr.herokuapp.com', target="_blank"), 
-      html.A(html.P("exchange-option-bsm.herokuapp.com"),href='http://exchange-option-bsm.herokuapp.com', target="_blank")]
-authors=["Michel Vanderhulst","Michel Vanderhulst","Michel Vanderhulst","Michel Vanderhulst"]
+# Making table quickly
+import pandas as pd
+
+# Listing manually all the apps created
+
+derivatives = ["European option", 
+               "European option",
+               "Asian option",
+               "Exchange option"]
+
+models      = ["Black-Scholes-Merton",
+               "Cox-Ross Rubinstein",
+               "Cox-Ross Rubinstein" , 
+               "Black-Scholes-Merton"]
+
+URLs        = [html.A(html.P("eu-option-bsm.herokuapp.com"),href="https://eu-option-bsm.herokuapp.com", target="_blank"), 
+               html.A(html.P('eu-option-crr.herokuapp.com'),href="https://eu-option-crr.herokuapp.com", target="_blank"), 
+               html.A(html.P("asian-option-crr.herokuapp.com"),href='https://asian-option-crr.herokuapp.com', target="_blank"), 
+               html.A(html.P("exchange-option-bsm.herokuapp.com"),href='http://exchange-option-bsm.herokuapp.com', target="_blank")]
+
+authors     = ["Michel Vanderhulst",
+               "Michel Vanderhulst",
+               "Michel Vanderhulst",
+               "Michel Vanderhulst"]
+
+# Would be a nice addition, idk how to do it. I imagine getting from github the last commit (=modifcation) date from each app?                
 lastupdated = ["2021/01/04","2021/02/11","2021/02/11","2021/02/14"]
 
+# Building the table fromm all apps info
 dictionary={"Derivative":derivatives,"Model":models,"URL":URLs,"Author":authors}
 df=pd.DataFrame(dictionary)
+
+# making Dash table out of pandas table
 table=dbc.Table.from_dataframe(df, striped=True, bordered=True, hover=True)
 
+# Creating the app body
 def body():
   return html.Div(children=[
             html.Div(id='left-column', children=[

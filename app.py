@@ -5,16 +5,16 @@ import dash_html_components as html
 from dash.dependencies import Input, Output, State
 import dash_bootstrap_components as dbc
 
-# Importing app header & body from the other .py scripts. 
+# Importing app header & body from the other .py scripts
 from appHeader import header
 from appBody import body
 
 
-
+# Creating app dash object                     # importing modern-looking buttons, tables, etc
 app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
 server = app.server
 
-
+# Building the app layout from header, body
 app.layout = html.Div(
                 id='main_page',
                 children=[
@@ -24,6 +24,7 @@ app.layout = html.Div(
                      )
 
 
+# App interactivity 1: top right About button
 @app.callback(
     Output("popover", "is_open"),
     [Input("popover-target", "n_clicks")],
@@ -36,7 +37,7 @@ def toggle_popover(n, is_open):
 
 
 
-
+# Main function, runs the app
 if __name__ == '__main__':
     app.run_server(debug=True)
 
