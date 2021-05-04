@@ -1,12 +1,14 @@
+# Dash app libraries
 import dash
 import dash_core_components as dcc
 import dash_html_components as html
 from dash.dependencies import Input, Output, State
 import dash_bootstrap_components as dbc
 
-from layout_header import header
-from layout_body import body
-import pandas as pd
+# Importing app header & body from the other .py scripts. 
+from appHeader import header
+from appBody import body
+
 
 
 app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
