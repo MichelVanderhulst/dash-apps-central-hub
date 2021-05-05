@@ -28,8 +28,8 @@ def header():
                                               style={"margin-left":"10px"}
                                               ),
 
-                                       html.Div(children=[html.H5("Asian option replication strategy app"),
-                                                          html.H6("Cox-Ross-Rubinstein model")
+                                       html.Div(children=[html.H5("Derivatives replication strategies central hub"),
+                                                          #html.H6("Cox-Ross-Rubinstein model")
                                                           ],
                                                  style={"display":"inline-block", "font-family":'sans-serif','transform':'translateY(+32%)', "margin-left":"10px"}),
 
