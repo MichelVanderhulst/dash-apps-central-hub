@@ -26,10 +26,15 @@ URLs        = [html.A(html.P("eu-option-bsm.herokuapp.com"),href="https://eu-opt
                html.A(html.P("asian-option-crr.herokuapp.com"),href='https://asian-option-crr.herokuapp.com', target="_blank"), 
                html.A(html.P("exchange-option-bsm.herokuapp.com"),href='http://exchange-option-bsm.herokuapp.com', target="_blank")]
 
-authors     = ["Michel Vanderhulst",
-               "Michel Vanderhulst",
-               "Michel Vanderhulst",
-               "Michel Vanderhulst"]
+# authors     = ["Michel Vanderhulst",
+#                "Michel Vanderhulst",
+#                "Michel Vanderhulst",
+#                "Michel Vanderhulst"]
+
+authors     = ["Temporarily hidden for CFA Quant Awards",
+               "Temporarily hidden for CFA Quant Awards",
+               "Temporarily hidden for CFA Quant Awards",
+               "Temporarily hidden for CFA Quant Awards"]
 
 # Would be a nice addition, idk how to do it. I imagine getting from github the last commit (=modifcation) date from each app?                
 lastupdated = ["2021/01/04","2021/02/11","2021/02/11","2021/02/14"]
@@ -75,16 +80,16 @@ def body():
                             html.H4("Origin of apps and methodology", style={"text-align":"center"}),
                             html.P([
                               """
-                              The web applications were done by Michel Vanderhulst in 2020/2021 for his Master's Thesis under the supervision of Prof. Frédéric Vrins at the Louvain School of Management.
+                              The web applications were done by [Hidden for CFA Quant Awards] in 2020/2021 for his Master's Thesis under the supervision of Prof. Frédéric Vrins at the Louvain School of Management.
                               Their goal is for future students' thesis to continue updating and adding new derivatives' replication strategies. 
                               """]),
                             html.Br(),
                             html.P([
                               """
-                              The first four web apps have as support the written thesis of Michel. The full mathematical proofs and explanations, along the applications' developments (and step-by-step methodology to build one) can be found there. 
+                              The first four web apps have as support the written Master's thesis. The full mathematical proofs and explanations, along the applications' developments (and step-by-step methodology to build one) can be found there. 
                               """]),
-                            html.Br(),
-                            html.P(["The source code of the apps can be found at ", html.A("github.com/MichelVanderhulst",href="https://github.com/MichelVanderhulst?tab=repositories", target="_blank"),"."])
+                            #html.Br(),
+                            #html.P(["The source code of the apps can be found at ", html.A("github.com/MichelVanderhulst",href="https://github.com/MichelVanderhulst?tab=repositories", target="_blank"),"."])
                             ])]),
                       #
                       #
