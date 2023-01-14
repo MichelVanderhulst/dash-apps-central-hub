@@ -21,10 +21,10 @@ models      = ["Black-Scholes-Merton",
                "Cox-Ross Rubinstein" , 
                "Black-Scholes-Merton"]
 
-URLs        = [html.A(html.P("eu-option-bsm.herokuapp.com"),href="https://eu-option-bsm.herokuapp.com", target="_blank"), 
-               html.A(html.P('eu-option-crr.herokuapp.com'),href="https://eu-option-crr.herokuapp.com", target="_blank"), 
-               html.A(html.P("asian-option-crr.herokuapp.com"),href='https://asian-option-crr.herokuapp.com', target="_blank"), 
-               html.A(html.P("exchange-option-bsm.herokuapp.com"),href='http://exchange-option-bsm.herokuapp.com', target="_blank")]
+URLs        = [html.A(html.P("eu-option-bsm"),href="https://eu-option-bsm.onrender.com", target="_blank"), 
+               html.A(html.P('eu-option-crr'),href="https://eu-option-crr.onrender.com", target="_blank"), 
+               html.A(html.P("asian-option-crr"),href='https://asian-option-crr.onrender.com', target="_blank"), 
+               html.A(html.P("exchange-option-bsm"),href='https://exchange-option-bsm.onrender.com', target="_blank")]
 
 authors     = ["Michel Vanderhulst",
                "Michel Vanderhulst",
