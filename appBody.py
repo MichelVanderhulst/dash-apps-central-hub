@@ -75,14 +75,14 @@ def body():
                             html.H4("Origin of apps and methodology", style={"text-align":"center"}),
                             html.P([
                               """
-                              The web applications were done by Michel Vanderhulst in 2020/2021 for his Master's Thesis under the supervision of Prof. Frédéric Vrins at the Louvain School of Management.
-                              Their goal is for future students' thesis to continue updating and adding new derivatives' replication strategies. 
+                              The web applications were done by Michel Vanderhulst in 2020/2021 for his Master's Thesis under the supervision of Prof. Frédéric Vrins.
+                              Their goal is these application to be maintained and further enriched with other derivatives' replication strategies. 
                               """]),
-                            html.Br(),
-                            html.P([
-                              """
-                              The first four web apps have as support the written Master's thesis. The full mathematical proofs and explanations, along the applications' developments (and step-by-step methodology to build one) can be found there. 
-                              """]),
+                            # html.Br(),
+                            # html.P([
+                            #   """
+                            #   The first four web apps have as support the written Master's thesis. The full mathematical proofs and explanations, along the applications' developments (and step-by-step methodology to build one) can be found there. 
+                            #   """]),
                             html.Br(),
                             html.P(["The source code of the apps can be found at ", html.A("github.com/MichelVanderhulst",href="https://github.com/MichelVanderhulst?tab=repositories", target="_blank"),"."])
                             ])]),

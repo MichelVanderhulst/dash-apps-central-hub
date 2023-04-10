@@ -21,17 +21,17 @@ def header():
     return html.Div(
                 id='app-page-header',
                 children=[
-                    html.Div(children=[html.A(id='lsm-logo', 
-                                              children=[html.Img(style={'height':'6%', 'width':'6%'}, src='data:image/png;base64,{}'.format(base64.b64encode(open(f"{logo1path}", 'rb').read()).decode()))],
-                                              href=f"{logo1URL}",
-                                              target="_blank", #open link in new tab
-                                              style={"margin-left":"10px"}
-                                              ),
+                    html.Div(children=[
+                                        # html.A(id='lsm-logo', 
+                                        #       children=[html.Img(style={'height':'6%', 'width':'6%'}, src='data:image/png;base64,{}'.format(base64.b64encode(open(f"{logo1path}", 'rb').read()).decode()))],
+                                        #       href=f"{logo1URL}",
+                                        #       target="_blank", #open link in new tab
+                                        #       style={"margin-left":"10px"}
+                                        #       ),
 
                                        html.Div(children=[html.H5("Derivatives replication strategies central hub"),
-                                                          #html.H6("Cox-Ross-Rubinstein model")
                                                           ],
-                                                 style={"display":"inline-block", "font-family":'sans-serif','transform':'translateY(+32%)', "margin-left":"10px"}),
+                                                 style={"display":"inline-block", "font-family":'sans-serif', "transform":"translateY(+22%)", "margin-left":"40px"}),
 
                                        html.Div(children=[dbc.Button("About", id="popover-target", outline=True, style={"color":"white", 'border': 'solid 1px white'}),
                                                           dbc.Popover(children=[dbc.PopoverHeader("About"),
@@ -44,16 +44,17 @@ def header():
                                                                        is_open=False,
                                                                        target="popover-target"),
                                                           ],
-                                                 style={"display":"inline-block","font-family":"sans-serif","marginLeft":"50%", "margin-right":"10px"}),
+                                                 style={"display":"inline-block", "font-family":"sans-serif", "transform":"translateY(+15%)", "marginLeft":"62%", "margin-right":"10px"}
+                                                 ),
 
-                                     html.A(id="nova-logo",
-                                            children=[html.Img(style={"height":"9%","width":"9%"}, src="data:image/png;base64,{}".format(base64.b64encode(open(f"{logo2path}","rb").read()).decode()))],
-                                            href=f"{logo2URL}",
-                                            target="_blank",                   
-                                            style={}
-                                            )                                       
+                                     # html.A(id="nova-logo",
+                                     #        children=[html.Img(style={"height":"9%","width":"9%"}, src="data:image/png;base64,{}".format(base64.b64encode(open(f"{logo2path}","rb").read()).decode()))],
+                                     #        href=f"{logo2URL}",
+                                     #        target="_blank",                   
+                                     #        style={}
+                                     #        )                                       
                                       ]
-                             ,style={"display":"inline-block"}),  
+                             )#,style={"display":"inline-block"}),  
                          ],
                 style={
                     'background': bg_color,
